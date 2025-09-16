@@ -1,4 +1,4 @@
-// dom.js
+
 export function createEl(tag, attrs = {}, children = []) {
   const el = document.createElement(tag);
   Object.entries(attrs).forEach(([k, v]) => {
@@ -13,7 +13,6 @@ export function createEl(tag, attrs = {}, children = []) {
   return el;
 }
 
-// create a task card element
 export function createTaskCard(task) {
   const title = createEl('h4', { class: 'task-title' }, [task.title]);
   const desc = task.description

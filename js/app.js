@@ -5,7 +5,7 @@ import { loadTasks, saveTasks } from './storage.js';
 
 let tasks = loadTasks();
 
-// selectors
+
 const form = document.getElementById('taskForm');
 const titleInput = document.getElementById('taskTitle');
 const descInput = document.getElementById('taskDescription');
@@ -24,7 +24,7 @@ const toast = document.getElementById('toast');
 const toastTitle = document.getElementById('toastTitle');
 const toastMessage = document.getElementById('toastMessage');
 
-// render tasks
+
 function render() {
   Object.values(columns).forEach(col => (col.innerHTML = ''));
 
@@ -37,7 +37,7 @@ function render() {
   initDragDrop(tasks, render);
 }
 
-// update counts + footer stats
+
 function updateCounts() {
   const todoCount = tasks.filter(t => t.status === 'todo').length;
   const progressCount = tasks.filter(t => t.status === 'progress').length;
@@ -50,7 +50,7 @@ function updateCounts() {
   statsText.textContent = `Total tasks: ${tasks.length} | Completed: ${doneCount} | In progress: ${progressCount} | Pending: ${todoCount}`;
 }
 
-// toast show
+
 function showToast(title, message) {
   toastTitle.textContent = title;
   toastMessage.textContent = message;
@@ -58,7 +58,7 @@ function showToast(title, message) {
   setTimeout(() => toast.classList.add('hidden'), 3000);
 }
 
-// add new task
+
 form.addEventListener('submit', e => {
   e.preventDefault();
   const title = titleInput.value.trim();
@@ -80,5 +80,5 @@ form.addEventListener('submit', e => {
   form.reset();
 });
 
-// initial render
+
 render();

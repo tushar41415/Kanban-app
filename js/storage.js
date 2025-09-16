@@ -1,4 +1,4 @@
-// storage.js
+
 const STORAGE_KEY = 'kanban_tasks';
 
 export function saveTasks(tasks) {
